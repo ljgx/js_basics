@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 10px solid #ccc;
+            padding: 40px;
+            margin-top: 20px;
+            margin-right: 20px;
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <p style="width: 200px; height: 100px;">123</p>
+        <p>456</p>
+    </div>
+    <input type="text">
+    <div>
+        <span class="hour">1</span>
+        <span class="minute">1</span>
+        <span class="second">1</span>
+    </div>
+    <button>点击</button>
+    <span></span>
+    <div class="box"></div>
+    <script>
+        window.addEventListener('load', function (e) {
+            var div = document.querySelector('.div1');
+            // console.log(div);
+            // div.onclick = function(e){
+            //     console.log(e);
+            // }
+            div.addEventListener('click', function (e) {
+                console.log(this);
+                console.log(e.target);
+                console.log(e.currentTarget);
+            })
+
+
+            // 定时器
+        })
+
+
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        var inputTime = +new Date('2021-3-1 00:00:00')
+        function countTime() {
+            var nowTime = +new Date();
+            var times = (inputTime - nowTime) / 1000;
+            var d = parseInt(times / 60 / 60 / 24);
+            d = d > 10 ? d : '0' + d;
+            var h = parseInt(times / 60 / 60 % 24);
+            h = h > 10 ? h : '0' + h;
+            hour.innerHTML = h;
+            var m = parseInt(times / 60 % 60);
+            m = m > 10 ? m : '0' + m;
+            minute.innerHTML = m;
+            var s = parseInt(times % 60);
+            s = s > 10 ? s : '0' + s;
+            second.innerHTML = s;
+        }
+        countTime()
+        var ab = setInterval(countTime, 1000)
+        var btn = document.querySelector('button');
+        var time = 10;
+        btn.addEventListener('click', function () {
+            btn.disabled = true;
+            var times = setInterval(function () {
+                if (time == 0) {
+                    clearInterval(times)
+                    btn.disabled = false;
+                    btn.innerHTML = '点击';
+                    time = 10;
+                } else {
+                    btn.innerHTML = '还剩下' + time + '秒';
+                    time--;
+                }
+
+            }, 1000)
+
+        })
+        console.log('-----------');
+        console.log(location.path);
+        console.log(location.pathname);
+        console.log(location.pathname.substring(1,));
+        console.log(location.pathname.split('O'));
+        var abc = 'asdqweqwasdqweqwe';
+        console.log(abc.slice(1));
+        console.log(abc.indexOf());
+        var abs = [1, 2, 3, 4, 5, 'asd', 'qweq'];
+        // console.log(abs.slice(1));
+        // console.log(abs.join(','));
+        // var abt = abs.splice(0,3)
+        // console.log(abt);
+        // console.log(abt.indexOf(1));
+        // console.log(abt.splice(0,1));
+        // console.log(abt);
+
+
+        // 判断手机或者电脑游览的网页 开始
+        // if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+        //     window.location.href = "../H5/index.html"; //手机
+        // }else{
+        //     winow.location.href = ''  //电脑
+        // }
+        // 结束
+        var box = document.querySelector('.box')
+        console.log(box.offsetWidth);
+        console.log(box.offsetHeight);
+        console.log('-----------');
+        function num() {
+            return Math.floor(Math.random() * 10) + '';
+        }
+        var abq = num();
+        var abw = num()
+        console.log(abq);
+        console.log(abw);
+        console.log(abw + abq);
+        let sum = ''
+        for (let i = 0; i < 16; i++) {
+            let a = num();
+            sum = a + sum;
+        }
+        sum = sum * 1;
+        console.log(sum);
+        console.log(typeof sum);
+        console.log(Math.random());
+        var abf = Math.random() + '';
+        var qwe = abf.substr(0,16)
+        console.log();
+       
+        let str = 'CanvasRenderingContext2D';
+        let str2 = [];
+        str = str.split('');
+        console.log(str);
+        console.log(str[0]);
+        for(let i = 0; i <str.length;i++){
+            if(str2.indexOf(str[i]) === -1){
+                str2.push(str[i])
+            }
+        }
+        var a = [1,2,,3];
+       
+        str2 = str2.join('');
+        console.log(str2);
+        console.log(str2.split('').reverse().join(''));
+
+        console.log('-------------');
+        var abc = 'qweqweqweqasdad';
+        console.log(abc.split(''));
+        var abq = ['123123','wqeqas','aqe','zxc'];
+        console.log(abq.join(''));
+    </script>
+</body>
+
+</html>

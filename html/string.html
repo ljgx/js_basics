@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'qweqwdadqwesdsdewrewergdf';
+        function unique(str) {
+            var ab = [];
+            var newStr = str.split('');
+            for (let i = 0; i < newStr.length; i++) {
+                if (ab.indexOf(newStr[i]) === -1) {
+                    ab.push(newStr[i])
+                }
+            }
+            ab = ab.join('');
+            return ab;
+        }
+        var a = unique(str);
+        console.log(a);
+        console.log(str);
+
+        var index = str.indexOf('q')
+        var num = 0;
+        while (index !== -1) {
+            num++;
+            index = str.indexOf('q', index + 1);
+        }
+        console.log(num);
+        var o = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);
+            if (o[chars]) {
+                o[chars]++
+            } else {
+                o[chars] = 1;
+            }
+        }
+         console.log(o);
+         var max = 0;
+         for(var k in o){
+             console.log(k);
+             if(o[k] >max){
+                 max = o[k]
+             }
+         }
+         console.log(max);
+         var ar = [
+             {name:'小明',age:18},
+             {name:'小明1',age:12},
+             {name:'小明2',age:13}
+         ]
+         function sortByAge(age){
+             return function(a,b){
+                 return a[age] - b[age];
+             }
+         }
+         console.log(ar.sort(sortByAge('age')));
+         var qwe = '啊实打实啊实打实驱蚊器';
+         var asd = qwe.substr(1,3);
+         console.log(asd);
+    </script>
+</body>
+
+</html>

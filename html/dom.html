@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="asd"></div>
+    <script>
+        var a = document.getElementById('asd');
+        // document.getElementsByTagName()
+        console.dir(a); 
+        var c = [1,2,34];
+        console.dir(c);
+        // document.getElementsByClassName('类名')
+        document.querySelector('#asd')
+        document.querySelectorAll('#asd')
+        
+        function Foo(){
+            getName = function(){
+                alert(1);
+            }
+            return this;
+        }
+        Foo.getName = function(){alert(2)};
+        Foo.prototype.getName = function(){alert(3)};
+        var getName = function(){alert(4)};
+        // Foo.getName()
+        // getName();
+        // console.log(Foo());
+        // Foo().getName();
+        // getName();
+        // new Foo.getName();
+        // new Foo().getName();
+        // new new Foo().getName();
+        
+    </script>
+</body>
+</html>
